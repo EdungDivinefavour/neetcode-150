@@ -12,7 +12,7 @@ class Solution:
 
         res = [0] * len(nums)
 
-        # If its all zeroes, just return the empty results array
+        # If it contains multiple zeroes, just return the empty results array
         if zeroes > 1: return res
 
         for i, num in enumerate(nums):
