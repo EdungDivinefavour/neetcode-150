@@ -1,6 +1,6 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        # A brute force solution would be to do an O(n^2) loop and check for each i and j.. just like in Two Sum 1
+        # A brute force solution would be to do an O(n^2) loop and check for each i and j.. just like in Two Sum 1's brute force approach
         # Aside that approach... I can already think of some other terrible ways to do it. 
         # But I think we can do better... What advantage does sorting give us?
         # We know for sure that the smaller numbers will be at the start and the bigger ones at the end
