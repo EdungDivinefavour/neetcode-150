@@ -8,7 +8,7 @@ class Solution:
         stack = []
 
         for token in tokens:
-            # Also if the token is not a sign, we can just add it to the stack
+            # If the token is not a sign, we can just add it to the stack
             if token not in ("+-*/"): 
                 stack.append(int(token))
                 continue
