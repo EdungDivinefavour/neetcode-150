@@ -1,7 +1,7 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
         # There are several ways I think we can solve this problem
-        # I don't want to image what the brute force version would be like : )
+        # I don't want to imagine what the brute force version would be like : )
         # But one approach that will cost O(n) time and space.... that I can think of is as follows:
 
         # You see, the thing that decides how much water I have in any cell is the shorter of the two tallest walls around it
