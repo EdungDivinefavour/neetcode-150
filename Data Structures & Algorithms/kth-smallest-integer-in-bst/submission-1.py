@@ -10,7 +10,7 @@ class Solution:
         # The key to this question is remembering the fact that a BST has the smaller elements always to the left
 
         # We can simply traverse through in inorder because it goes left first, center next, and then right last.
-        # We don't even need an array because each new node will be bigger than the last. So we can just store the kth value when we find it
+        # Unlike with the last solution, we don't even need an array because each new node will be bigger than the last. So we can just store the kth value when we find it
 
         count, kth = 1, None
         def dfs(node):
