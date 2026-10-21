@@ -11,7 +11,7 @@ class Solution:
 
         for r in range(len(nums)):
             window.append(nums[r])
-            if r < k-1: continue # For the first 2, we just want to keep adding to the window
+            if r < k-1: continue # For the first k-1, we just want to keep adding to the window
             
             # At this point I have enough to compare
             out.append(max(window))
