@@ -1,5 +1,7 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
+        # This solution technically works but.. It fails when we have a very long string :/ So we have to come up with something better
+        
         # So we are trying to find the shortest substring where t exists(including its duplicates).
         # The first thought that comes to my mind is sliding window!
         # What truth do we want to maintain in our window? If you think about the question, we want to maintain the fact that A always reflects what our window contains relative to t
