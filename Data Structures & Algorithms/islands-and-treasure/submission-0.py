@@ -1,6 +1,7 @@
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
-        # One approach we can take here is when we find a land cell, we can explore our way deep to find the closest treasure chest
+        # One approach we can take here is when we find a land cell, we can explore our way deep to find the closest treasure chest.
+        # Note: This technically works but it takes too much time. This is because we are using DFS and this does a lot of wasted/repeated computation
         
         visited = set()
         def explore(row, col):
