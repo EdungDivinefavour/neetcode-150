@@ -11,9 +11,9 @@ class Solution:
                 mid = l + (r - l)//2
 
                 if row[mid] < target:
-                    l += 1
+                    l = mid + 1
                 elif row[mid] > target:
-                    r -= 1
+                    r = mid - 1
                 else:
                     return True
         
