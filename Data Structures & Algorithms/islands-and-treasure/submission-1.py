@@ -1,5 +1,8 @@
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
+        # Note: this approach is almost correct but will fail because of the reason stated in Solution 3. Link below
+        # https://github.com/EdungDivinefavour/neetcode-150/blob/master/Data%20Structures%20%26%20Algorithms/islands-and-treasure/submission-2.py#L35
+        
         # So we know the last solution was very inefficient and the reason it was is because, given
         # Input: [
         #     [2147483647,-1,0,2147483647],
