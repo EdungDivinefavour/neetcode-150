@@ -14,8 +14,6 @@ class Solution:
                 if grid[r][c] == 2:
                     queue.append((r, c))
 
-        # If there were no rotten fruits at the start we can save ourselves some compute here and return 
-
         # Now we can start spreading the disease
         minutes = -1
         while queue:
