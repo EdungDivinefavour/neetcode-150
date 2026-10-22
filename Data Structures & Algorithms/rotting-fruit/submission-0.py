@@ -14,8 +14,15 @@ class Solution:
                 if grid[r][c] == 2:
                     queue.append((r, c))
 
-        # Now we can start spreading the disease
+        
+
+        # We are starting at -1 because our BFS will process the initial rotten fruits at minute 0
+        # But it will also process the last batch of rotten fruits even when there are no fresh fruits left
+        # So we end up processing one extra level that doesn't actually represent another minute of rotting
+        # Starting at -1 helps us to account for that extra level
         minutes = -1
+
+        # Now we can start spreading the disease
         while queue:
 
             # We want to lock in the current elements in the queue since we will be mutating the queue along the way
