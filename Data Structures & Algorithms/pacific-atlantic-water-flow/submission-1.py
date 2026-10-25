@@ -45,7 +45,7 @@ class Solution:
                         ocean.append((nr, nc))
                         
                         # Then mark me as visited
-                        visited.add((r, c))
+                        visited.add((nr, nc))
 
             return res
 
