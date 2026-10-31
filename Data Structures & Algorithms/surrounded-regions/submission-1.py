@@ -1,4 +1,23 @@
 class Solution:
+        # This solution is logically correct.. we are no longer adding cells to regionCells prematurely
+        # We first collect our candidates and only add them if the entire exploration comes back as valid
+        # But what happens if we have a really large region of connected Os?
+        #
+        # For example:
+        # board = [["X"] * 100 for _ in range(100)]
+        # for r in range(1, 99):
+        #     for c in range(1, 99):
+        #         board[r][c] = "O"
+        #
+        # Here we have a huge region of Os surrounded by Xs
+        # When we start exploring, we call explore on another O.. which also calls explore on another O.. and so on
+        # So we could end up making thousands of recursive calls before any of them even return
+        #
+        # Well python won't let us make that many recursive calls...So even though our logic is correct, we could still end up getting a RecursionError
+        #
+        # I think we can avoid this by just switching to iterative DFS ie using our own stack instead of recursive calls
+        # See submission 2
+    
     def solve(self, board: List[List[str]]) -> None:
         # My first thought is to approach this problem like the islands problem
         # https://github.com/EdungDivinefavour/neetcode-150/blob/master/Data%20Structures%20%26%20Algorithms/count-number-of-islands/submission-0.py
