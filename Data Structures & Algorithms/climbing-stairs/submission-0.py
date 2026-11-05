@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        # There are a few ways we can solve this problem.. I don't want to go into how to approach this problem.
+        # There are a few ways we can solve this problem.
         # One way is to think of this from a backtracking/DFS approach shere.
         # So recall that we are only allowed to take 1 step or 2 steps... so lets say we wanted to get to step 3
         # Well from 0, we can either take one step or two steps.. This lands us in either 1 or 2..... 
