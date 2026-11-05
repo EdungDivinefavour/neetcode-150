@@ -7,6 +7,9 @@
 
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        # Note: Works but is too inefficient!
+
+        
         # The first thing we want to figure out is what each traversal actually tells us
         # Recall that preorder goes root, left, right.. so the first element is always the root of the tree we are looking at
         # Inorder goes left, root, right.. so if we know who the root is, everything to its left in inorder is the left subtree and everything to its right is the right subtree
