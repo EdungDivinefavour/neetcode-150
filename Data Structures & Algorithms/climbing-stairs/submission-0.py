@@ -1,5 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
+        # Technically works but is too inefficient!
+        
         # There are a few ways we can solve this problem.
         # One way is to think of this from a backtracking/DFS approach shere.
         # So recall that we are only allowed to take 1 step or 2 steps... so lets say we wanted to get to step 3
