@@ -9,7 +9,6 @@ class Solution:
         # In our case, we can simply start at the top of the stairs and ask.. "What is the minimum cost to rob from here"?
         # Then go down one stair and ask, "okay starting from here now, what is the minimum cost to rob from here?" and so forth
 
-        minCost = 0
         dp = [0] * len(cost) # We can use a table to store the computation we have gotten so far
 
         # So dp[i] basically represents the minimum cost of reaching the top if we started from stair i.
