@@ -1,0 +1,32 @@
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        # Unlike the last approach which starts from the big question ie we have these giant stairs to climb, how do we get to the top?
+        # Which is referred to as Top down(I know the name is confusing seeing as we were looking from bottom of the stairs and trying to climb up)..
+        # Its not really about stairs or no stairs, top down basically refers to the approach where you start from a big problem and ask, how do I start from this big problem to the small one.
+
+        # Anyway... In this solution, we are instead using the Bottom Up approach here, which basically asks... If we started from the very smallest problem, how does it lead us to solving the big problem?
+
+        # In our case, we can simply start at the top of the stairs and ask.. "What is the minimum cost to rob from here"?
+        # Then go down one stair and ask, "okay starting from here now, what is the minimum cost to rob from here?" and so forth
+
+        minCost = 0
+        dp = [0] * len(cost) # We can use a table to store the computation we have gotten so far
+        
+        # Since we know the result of these 2, we can just hardcode them
+        # Btw for the 2nd last stair, you would think to calculate the min of (itself vs itself + last stair).. and you won't be "wrong"
+        # But think about it, since all costs are non negative, the min of that calculation will always be itself, hence our simply setting it to itself
+        dp[-1], dp[-2] = cost[-1], cost[-2] 
+
+        # Recall that dp[i] basically represents the minimum cost of reaching the top if we started from stair i.
+        # And since we're starting from the end, by the time we get to any given stair, we would have already computed the minimum cost from the stairs after it.
+
+        # Since we want to start from the end of the stairs, we have to loop backwards... We already stored values for the last 2 elements above, so we want to start from the the 3rd from the end
+        for i in range(len(cost) -3, -1, -1):
+            # For every other stair... we know that after paying for this stair, we have two choices ie We can move one stair or two stairs forward.
+            # But the nice thing is that we already calculated the minimum cost from both of those stairs.
+            # So we don't need to explore all the possibilities again... we just need to take the cheaper of the two.
+            dp[i] = cost[i] + min(dp[i+1], dp[i+2])
+
+        # And since the problem allows us to start from either stair 0 or stair 1...
+        # We simply return whichever one has the smaller total cost of reaching the top.
+        return min(dp[0], dp[1])
