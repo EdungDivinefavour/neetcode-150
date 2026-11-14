@@ -26,13 +26,13 @@ class Solution:
         # Well given [2, 9, 8, 7, 6], let's imagine we only had the very last house to consider.
         # We can either rob it and get 6, or skip it and get 0... so obviously our max is 6.
 
-        # Okay, now what if we had the last TWO houses instead?
-        # We can either rob 8 and skip 6, or skip 8 and take the best result we already calculated for 6.
+        # Okay, now what if we had the last TWO houses instead? ie [7, 6]
+        # We can either rob 7 and skip 6, or skip 7 and take the best result we already calculated for 6.
         # So our answer is simply the max of those two possibilities.
 
-        # Now what if we had the last THREE houses?
-        # Again, we have the same two choices... rob 7 and take whatever maximum we can get from 6 onward,
-        # Or skip 7 and take whatever maximum we already calculated from 8 onward.
+        # Now what if we had the last THREE houses? ie [8, 7, 6]
+        # Again, we have the same two choices... rob 8 and take whatever maximum we can get from 6 onward,
+        # Or skip 8 and take whatever maximum we already calculated from 7 onward.
         # And the nice thing is... we would have already computed those smaller answers!
 
         # So we can just keep repeating this process, moving backwards and building bigger and bigger solutions
