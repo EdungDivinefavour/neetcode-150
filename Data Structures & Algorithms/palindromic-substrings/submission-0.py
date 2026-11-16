@@ -1,4 +1,3 @@
-
 class Solution:
     def countSubstrings(self, s: str) -> int:
         # So for this problem... we want to count how many substrings in our string are palindromes.
@@ -37,6 +36,11 @@ class Solution:
             # Now let's check for even length palindromes... ie both pointers will start on adjacent characters.
             # Eg for "abba", the middle is between the two "b"s, so we start from those two characters and expand outwards.
             l, r = i, i+1
+
+            # Now you might wonder... since we have two while loops, won't we accidentally count the same palindrome twice?
+            # Well no... because our first loop starts with one character and only finds odd length palindromes ie lengths 1, 3, 5, etc.
+            # But this second loop starts with two adjacent characters and only finds even length palindromes ie lengths 2, 4, 6, etc.
+            # So a single character can NEVER be counted by this second loop, and neither loop can count a palindrome found by the other : )
 
             # Again, as long as our pointers are within bounds and the characters match, we have found another palindrome.
             while l >= 0 and r < len(s) and s[l] == s[r]:
